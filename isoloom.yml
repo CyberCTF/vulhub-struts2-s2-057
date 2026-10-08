@@ -2,7 +2,7 @@
 # Struts2 S2-057 (CVE-2018-11776) (Vulhub, by phith0n and the Vulhub contributors) as an Isoloom spec:
 # Vulhub's struts2/s2-057, vendored in build/struts2/app/, on the published image
 # vulhub/struts2:2.3.34-showcase with Vulhub's mounted action chaining file copied in.
-# `isoloom generate`, then `isoloom up docker`.
+# `isoloom generate`, then `isoloom run docker`.
 version: 1
 name: vulhub-struts2-s2-057
 
