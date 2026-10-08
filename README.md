@@ -13,7 +13,7 @@ the machine is Vulhub's published image `vulhub/struts2:2.3.34-showcase` with Vu
 
 ```bash
 isoloom generate
-isoloom up docker
+isoloom run docker
 ```
 
 Then open http://localhost:8080/showcase/ to see the Struts2 test page. The same spec runs as Docker on a local VM (`docker-vm`), on a
