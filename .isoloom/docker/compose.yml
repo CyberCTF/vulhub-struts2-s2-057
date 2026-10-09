@@ -9,6 +9,9 @@ services:
   struts2:
     build:
       context: ../../build/struts2
+      labels:
+        isoloom.managed: 'true'
+        isoloom.environment: vulhub-struts2-s2-057
     image: isoloom/vulhub-struts2-s2-057-struts2
     platform: linux/amd64
     hostname: struts2
@@ -40,6 +43,8 @@ services:
           memory: 1024M
     labels:
       isoloom.service.web: http:8080
+      isoloom.managed: 'true'
+      isoloom.environment: vulhub-struts2-s2-057
     restart: unless-stopped
   struts2-routes:
     image: alpine:3.20
@@ -61,6 +66,9 @@ services:
       struts2:
         condition: service_started
     restart: unless-stopped
+    labels:
+      isoloom.managed: 'true'
+      isoloom.environment: vulhub-struts2-s2-057
   isoloom-check:
     image: curlimages/curl:8.11.1
     profiles:
@@ -82,6 +90,9 @@ services:
         condition: service_healthy
       struts2-routes:
         condition: service_healthy
+    labels:
+      isoloom.managed: 'true'
+      isoloom.environment: vulhub-struts2-s2-057
   isoloom-check-struts2:
     image: curlimages/curl:8.11.1
     profiles:
@@ -97,6 +108,9 @@ services:
         condition: service_healthy
       struts2-routes:
         condition: service_healthy
+    labels:
+      isoloom.managed: 'true'
+      isoloom.environment: vulhub-struts2-s2-057
   isoloom-probe-amd64:
     image: busybox:1.37.0-musl
     platform: linux/amd64
@@ -108,11 +122,20 @@ services:
     - isoloom-probe-amd64:/probe
     network_mode: none
     restart: no
+    labels:
+      isoloom.managed: 'true'
+      isoloom.environment: vulhub-struts2-s2-057
 networks:
   lab:
     ipam:
       config:
       - subnet: 10.60.43.0/24
         gateway: 10.60.43.1
+    labels:
+      isoloom.managed: 'true'
+      isoloom.environment: vulhub-struts2-s2-057
 volumes:
-  isoloom-probe-amd64: {}
+  isoloom-probe-amd64:
+    labels:
+      isoloom.managed: 'true'
+      isoloom.environment: vulhub-struts2-s2-057
