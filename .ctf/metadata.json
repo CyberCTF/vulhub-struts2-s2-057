@@ -4,10 +4,5 @@
   "question": "Exploit S2-057 (CVE-2018-11776) to run a command on the server.",
   "category": "WEB",
   "difficulty": 3,
-  "evidence_kind": "SECRET",
-  "capabilities": [
-    "ognl-injection",
-    "remote-code-execution",
-    "struts2"
-  ]
+  "evidence_kind": "SECRET"
 }
